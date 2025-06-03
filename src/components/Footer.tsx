@@ -1,7 +1,10 @@
-import React from 'react';
-import { Scissors, MessageSquare } from 'lucide-react';
+import React, { useState } from 'react';
+import { MessageSquare } from 'lucide-react';
+import PolicyModal from './PolicyModal';
 
 const Footer: React.FC = () => {
+  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
   const currentYear = new Date().getFullYear();
 
   return (
@@ -10,7 +13,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between mb-12">
           <div className="mb-10 md:mb-0">
             <div className="flex items-center mb-4">
-              <Scissors size={32} className="text-primary-400 mr-2" />
+              <img src="/images/logo.png" alt="Speed Clipper" className="h-8 w-auto mr-2" />
               <span className="font-display font-bold text-2xl text-white">Speed Clipper</span>
             </div>
             <p className="text-gray-400 max-w-md mb-6">
@@ -59,8 +62,22 @@ const Footer: React.FC = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4">Legal</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                <li>
+                  <button 
+                    onClick={() => setShowPrivacyPolicy(true)} 
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Privacy Policy
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setShowTerms(true)} 
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Terms of Service
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
@@ -72,6 +89,20 @@ const Footer: React.FC = () => {
           </p>
         </div>
       </div>
+
+      <PolicyModal
+        isOpen={showPrivacyPolicy}
+        onClose={() => setShowPrivacyPolicy(false)}
+        title="Privacy Policy"
+        policyFile="/privacy-policy.txt"
+      />
+
+      <PolicyModal
+        isOpen={showTerms}
+        onClose={() => setShowTerms(false)}
+        title="Terms of Service"
+        policyFile="/terms-of-service.txt"
+      />
     </footer>
   );
 };

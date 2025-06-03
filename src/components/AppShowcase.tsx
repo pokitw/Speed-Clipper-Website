@@ -31,17 +31,16 @@ const AppShowcase: React.FC = () => {
   };
 
   return (
-    <section id="showcase" className="py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-900 text-white overflow-hidden">
+    <section id="showcase" className="py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-900 dark:from-dark-surface dark:via-dark-bg dark:to-dark-surface text-white overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">See It In Action</h2>
-          <p className="text-xl text-primary-100 max-w-2xl mx-auto">
+          <p className="text-xl text-primary-100 dark:text-dark-primary max-w-2xl mx-auto">
             Experience the sleek interface and powerful features of Speed Clipper
           </p>
         </div>
         
         <div className="relative max-w-5xl mx-auto">
-          {/* Main Showcase */}
           <div className="relative overflow-hidden rounded-2xl shadow-2xl mb-8 pb-[177.78%] bg-black">
             <div className="absolute inset-0 flex transition-transform duration-500" style={{ transform: `translateX(-${activeSlide * 100}%)` }}>
               {screenshots.map((screenshot, index) => (
@@ -59,7 +58,6 @@ const AppShowcase: React.FC = () => {
               ))}
             </div>
             
-            {/* Navigation Buttons */}
             <button 
               className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors z-10"
               onClick={prevSlide}
@@ -76,7 +74,6 @@ const AppShowcase: React.FC = () => {
             </button>
           </div>
           
-          {/* Dots Indicator */}
           <div className="flex justify-center space-x-2">
             {screenshots.map((_, index) => (
               <button

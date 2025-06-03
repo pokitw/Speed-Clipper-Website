@@ -179,11 +179,11 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <section id="features" className="py-20 bg-gray-50">
+    <section id="features" className="py-20 bg-gray-50 dark:bg-dark-surface">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Powerful Features</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-dark-text mb-4">Powerful Features</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Speed Clipper v1.1 brings you an array of powerful tools to make video editing faster and easier than ever.
           </p>
         </div>
@@ -198,21 +198,23 @@ const Features: React.FC = () => {
                 onClick={() => setSelectedFeature(feature)}
                 className={`w-full text-left p-6 rounded-lg transition-all duration-300 h-full transform hover:scale-[1.02] ${
                   feature.priority 
-                    ? 'bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-xl hover:shadow-2xl' 
-                    : 'bg-white shadow-md hover:shadow-lg border border-gray-100'
+                    ? 'bg-gradient-to-br from-primary-500 to-primary-700 dark:from-dark-primary dark:to-dark-hover text-white shadow-xl hover:shadow-2xl' 
+                    : 'bg-white dark:bg-dark-surface shadow-md hover:shadow-lg border border-gray-100 dark:border-dark-border'
                 }`}
               >
                 <div className={`w-12 h-12 flex items-center justify-center rounded-full mb-4 ${
                   feature.priority 
                     ? 'bg-white/20 text-white' 
-                    : 'bg-primary-100 text-primary-600'
+                    : 'bg-primary-100 dark:bg-dark-primary/20 text-primary-600 dark:text-dark-primary'
                 }`}>
                   {feature.icon}
                 </div>
-                <h3 className={`text-xl font-semibold mb-2 ${feature.priority ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`text-xl font-semibold mb-2 ${
+                  feature.priority ? 'text-white' : 'text-gray-900 dark:text-dark-text'
+                }`}>
                   {feature.title}
                 </h3>
-                <p className={feature.priority ? 'text-white/90' : 'text-gray-600'}>
+                <p className={feature.priority ? 'text-white/90' : 'text-gray-600 dark:text-gray-300'}>
                   {feature.description}
                 </p>
               </button>
