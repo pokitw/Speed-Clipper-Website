@@ -50,6 +50,9 @@ export default {
           border: '#2E2E2E',
           text: '#E0E0E0',
           primary: '#90caf8',
+          secondary: '#82b1ff',
+          accent: '#448aff',
+          hover: '#1E88E5',
         },
       },
       fontFamily: {
