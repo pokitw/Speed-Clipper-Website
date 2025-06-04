@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight, MessageSquare, Key, Check, Download as DownloadIcon } from 'lucide-react';
+import DownloadModal from './DownloadModal';
 
 const Download: React.FC = () => {
+  const [showDownloadModal, setShowDownloadModal] = useState(false);
+
+  const handleDownload = () => {
+    setShowDownloadModal(true);
+  };
+
   return (
     <section id="download" className="py-20 bg-white dark:bg-dark-surface">
       <div className="container mx-auto px-4 md:px-6">
@@ -48,6 +55,7 @@ const Download: React.FC = () => {
               <a 
                 href="/speedclipper.apk" 
                 download
+                onClick={handleDownload}
                 className="inline-flex items-center justify-center px-8 py-3 bg-secondary-600 dark:bg-dark-secondary text-white font-medium rounded-full hover:bg-secondary-700 dark:hover:bg-dark-hover transition-colors shadow-lg hover:shadow-xl text-lg w-full"
               >
                 <DownloadIcon size={24} className="mr-2" />
@@ -99,6 +107,11 @@ const Download: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <DownloadModal 
+        isOpen={showDownloadModal}
+        onClose={() => setShowDownloadModal(false)}
+      />
     </section>
   );
 };

@@ -10,21 +10,21 @@ interface FAQItemProps {
 
 const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, toggleOpen }) => {
   return (
-    <div className="border-b border-gray-200 py-4">
+    <div className="border-b border-gray-200 dark:border-dark-border py-4">
       <button 
         className="flex justify-between items-center w-full text-left focus:outline-none"
         onClick={toggleOpen}
         aria-expanded={isOpen}
       >
-        <h3 className="text-lg font-medium text-gray-900">{question}</h3>
+        <h3 className="text-lg font-medium text-gray-900 dark:text-dark-text">{question}</h3>
         {isOpen ? (
-          <ChevronUp size={20} className="text-primary-600 flex-shrink-0" />
+          <ChevronUp size={20} className="text-primary-600 dark:text-dark-primary flex-shrink-0" />
         ) : (
-          <ChevronDown size={20} className="text-gray-500 flex-shrink-0" />
+          <ChevronDown size={20} className="text-gray-500 dark:text-gray-400 flex-shrink-0" />
         )}
       </button>
       {isOpen && (
-        <div className="mt-2 text-gray-600 animate-slide-down">
+        <div className="mt-2 text-gray-600 dark:text-gray-300 animate-slide-down">
           <p>{answer}</p>
         </div>
       )}
@@ -71,16 +71,16 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-20 bg-gray-50">
+    <section id="faq" className="py-20 bg-gray-50 dark:bg-dark-bg">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-dark-text mb-4">Frequently Asked Questions</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Get answers to the most common questions about Speed Clipper
           </p>
         </div>
         
-        <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-6 md:p-8">
+        <div className="max-w-3xl mx-auto bg-white dark:bg-dark-surface rounded-xl shadow-md p-6 md:p-8">
           {faqItems.map((item, index) => (
             <FAQItem 
               key={index}
@@ -93,12 +93,12 @@ const FAQ: React.FC = () => {
         </div>
         
         <div className="text-center mt-12">
-          <h3 className="text-xl font-semibold text-gray-900 mb-4">Still have questions?</h3>
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-dark-text mb-4">Still have questions?</h3>
           <a 
             href="https://discord.gg/Dgqb5FvVuW" 
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-medium rounded-full hover:bg-primary-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-primary-600 dark:bg-dark-primary text-white font-medium rounded-full hover:bg-primary-700 dark:hover:opacity-90 transition-colors"
           >
             Contact Support
           </a>
