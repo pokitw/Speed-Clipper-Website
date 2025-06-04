@@ -13,7 +13,7 @@ const Download: React.FC = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [accessKey, setAccessKey] = useState('');
 
-  const RAZORPAY_KEY = "rzp_live_HVZy0lyBKNeSHe";
+  const RAZORPAY_KEY = "rzp_live_HVZy0IyBKNeSHe";
 
   const generateAccessKey = () => {
     const chars = '0123456789ABCDEF';
@@ -49,7 +49,7 @@ const Download: React.FC = () => {
     setIsAnimating(true);
     const options = {
       key: RAZORPAY_KEY,
-      amount: 399 * 100,
+      amount: 34900, // ₹349 in paise
       currency: "INR",
       name: "Speed Clipper",
       description: "App License Purchase",
@@ -75,6 +75,12 @@ const Download: React.FC = () => {
           setIsAnimating(false);
         }
       },
+      modal: {
+        ondismiss: function() {
+          toast.error("Payment was cancelled. Please try again.");
+          setIsAnimating(false);
+        }
+      },
       prefill: {
         name: "",
         email: "",
@@ -86,6 +92,10 @@ const Download: React.FC = () => {
     };
     
     const rzp = new (window as any).Razorpay(options);
+    rzp.on('payment.failed', function() {
+      toast.error("Payment failed. Please try again.");
+      setIsAnimating(false);
+    });
     rzp.open();
   };
 
@@ -111,7 +121,7 @@ const Download: React.FC = () => {
               Ready to Transform Your Video Editing?
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-              Get Speed Clipper v1.1 today for just $3.99 and experience faster, easier video editing with our powerful features and sleek Material 3 UI.
+              Get Speed Clipper v1.1 today for just ₹349 and experience faster, easier video editing with our powerful features and sleek Material 3 UI.
             </p>
             
             <div className="mb-10">
@@ -141,7 +151,7 @@ const Download: React.FC = () => {
                 disabled={isAnimating}
               >
                 <Key size={24} className="mr-2" />
-                Purchase License ($3.99)
+                Purchase License (₹349)
                 <ArrowRight size={20} className="ml-2" />
               </button>
               <button 
@@ -185,7 +195,7 @@ const Download: React.FC = () => {
               <ul className="space-y-2">
                 <li className="flex items-center text-gray-700 dark:text-gray-300">
                   <Key size={20} className="mr-2 text-primary-600 dark:text-dark-primary" />
-                  Lifetime license key for just $3.99
+                  Lifetime license key for just ₹349
                 </li>
                 <li className="flex items-center text-gray-700 dark:text-gray-300">
                   <Check size={20} className="mr-2 text-green-500 dark:text-dark-primary" />
