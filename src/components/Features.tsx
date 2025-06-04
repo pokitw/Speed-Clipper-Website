@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   FastForward,
   Scissors, 
@@ -8,173 +8,76 @@ import {
   Edit3, 
   Merge, 
   FolderPlus, 
-  Navigation, 
   Sliders, 
   Zap, 
   Trash2 
 } from 'lucide-react';
-import FeatureModal from './FeatureModal';
 
 interface Feature {
   icon: React.ReactNode;
   title: string;
   description: string;
-  details: string[];
   priority?: boolean;
 }
 
 const Features: React.FC = () => {
-  const [selectedFeature, setSelectedFeature] = useState<Feature | null>(null);
-
   const features: Feature[] = [
     {
       icon: <FastForward size={24} />,
       title: "Floating Resize Button",
       description: "Always-accessible floating overlay button for instant video resizing. No need to open the app - just tap the floating button to resize your latest video!",
-      details: [
-        "One-tap video resizing",
-        "Always visible overlay button",
-        "Instant access without opening app",
-        "Resize latest video automatically",
-        "Long-press for quick trim option"
-      ],
+      priority: true
+    },
+    {
+      icon: <Edit3 size={24} />,
+      title: "Editor Mode",
+      description: "Create polished 9:16 videos with centered content and customizable text overlay. Add stylish text with custom fonts, colors, and animations. Perfect for Instagram and TikTok content with background blur, gradient overlays, and advanced editing tools.",
       priority: true
     },
     {
       icon: <Scissors size={24} />,
       title: "Instant 16:9 Resizing",
-      description: "Automatically fetches and resizes your latest video to 16:9 with a single tap, saving it instantly without compression.",
-      details: [
-        "No manual video selection needed",
-        "Automatic latest video detection",
-        "Lossless quality preservation",
-        "Instant gallery saving",
-        "Perfect 16:9 aspect ratio every time"
-      ]
-    },
-    {
-      icon: <Edit3 size={24} />,
-      title: "Editor Mode",
-      description: "Create polished 9:16 videos with centered content and customizable text overlay, perfect for Instagram.",
-      details: [
-        "Automatic 9:16 formatting",
-        "Centered video placement",
-        "Customizable text overlay",
-        "Font style and size options",
-        "Color customization",
-        "Text positioning",
-        "Video scaling controls",
-        "Background customization"
-      ]
+      description: "Automatically fetches and resizes your latest video to 16:9 with a single tap, saving it instantly without compression."
     },
     {
       icon: <Layers size={24} />,
       title: "Manual Resize Mode",
-      description: "Full control over video selection and resizing with built-in photo and file picker.",
-      details: [
-        "Built-in file picker",
-        "Photo gallery integration",
-        "Custom aspect ratio options",
-        "Precise resize controls",
-        "Preview before saving"
-      ]
+      description: "Full control over video selection and resizing with built-in photo and file picker."
     },
     {
       icon: <Merge size={24} />,
       title: "Merge Clips",
-      description: "Combine multiple videos into a seamless 16:9 format with automatic resizing.",
-      details: [
-        "Multiple video selection",
-        "Automatic 16:9 formatting",
-        "Seamless transitions",
-        "Batch resizing",
-        "Single export process"
-      ]
+      description: "Combine multiple videos into a seamless 16:9 format with automatic resizing."
     },
     {
       icon: <FolderPlus size={24} />,
       title: "Batch Process Mode",
-      description: "Process multiple videos simultaneously with various enhancements and automatic gallery saving.",
-      details: [
-        "Multi-video processing",
-        "Automatic resizing",
-        "Audio enhancement",
-        "Video stabilization",
-        "Compression options",
-        "Automatic gallery saving"
-      ]
+      description: "Process multiple videos simultaneously with various enhancements and automatic gallery saving."
     },
     {
       icon: <Settings size={24} />,
       title: "Material 3 UI",
-      description: "Modern, intuitive interface following Google's latest Material 3 design system.",
-      details: [
-        "Dynamic color theming",
-        "Smooth animations",
-        "Intuitive navigation",
-        "Consistent design language",
-        "Improved accessibility"
-      ]
+      description: "Modern, intuitive interface following Google's latest Material 3 design system."
     },
     {
       icon: <SlidersHorizontal size={24} />,
       title: "Quick Settings",
-      description: "Access essential features directly from your home screen with a long press.",
-      details: [
-        "Long-press activation",
-        "Customizable shortcuts",
-        "Fast mode switching",
-        "Common settings access",
-        "Quick actions menu"
-      ]
-    },
-    {
-      icon: <Navigation size={24} />,
-      title: "Customizable Navigation",
-      description: "Personalize your navigation bar with quick access to preferred modes.",
-      details: [
-        "Custom mode ordering",
-        "Favorite modes pinning",
-        "Quick mode switching",
-        "Gesture navigation",
-        "Contextual actions"
-      ]
+      description: "Access essential features directly from your home screen with a long press."
     },
     {
       icon: <Sliders size={24} />,
       title: "Advanced Video Settings",
-      description: "Fine-tune your video output with advanced controls and quality settings.",
-      details: [
-        "Quality presets",
-        "Custom quality settings",
-        "Format selection",
-        "Advanced controls",
-        "Preview options"
-      ]
+      description: "Fine-tune your video output with advanced controls and quality settings."
     },
     {
       icon: <Zap size={24} />,
       title: "Hardware Acceleration",
-      description: "Optimized performance with hardware-accelerated video processing.",
-      details: [
-        "Faster processing",
-        "Reduced battery usage",
-        "Device optimization",
-        "Enhanced performance",
-        "Efficient rendering"
-      ]
+      description: "Optimized performance with hardware-accelerated video processing."
     },
     {
       icon: <Trash2 size={24} />,
       title: "Storage Management",
-      description: "Efficient storage management with one-tap temporary file cleaning.",
-      details: [
-        "One-tap cleaning",
-        "Automatic cache management",
-        "Storage analytics",
-        "Selective cleaning",
-        "Space optimization"
-      ]
+      description: "Efficiently manage storage by clearing videos created by Speed Clipper with one tap."
     }
   ];
 
@@ -194,12 +97,11 @@ const Features: React.FC = () => {
               className={`opacity-0 animate-slide-up ${feature.priority ? 'col-span-full lg:col-span-2' : ''}`}
               style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'forwards' }}
             >
-              <button 
-                onClick={() => setSelectedFeature(feature)}
-                className={`w-full text-left p-6 rounded-lg transition-all duration-300 h-full transform hover:scale-[1.02] ${
+              <div 
+                className={`w-full text-left p-6 rounded-lg transition-all duration-300 h-full ${
                   feature.priority 
-                    ? 'bg-gradient-to-br from-primary-500 to-primary-700 dark:from-dark-primary dark:to-dark-hover text-white shadow-xl hover:shadow-2xl' 
-                    : 'bg-white dark:bg-dark-surface shadow-md hover:shadow-lg border border-gray-100 dark:border-dark-border'
+                    ? 'bg-gradient-to-br from-primary-500 to-primary-700 dark:from-dark-primary dark:to-dark-hover text-white shadow-xl' 
+                    : 'bg-white dark:bg-dark-surface shadow-md border border-gray-100 dark:border-dark-border'
                 }`}
               >
                 <div className={`w-12 h-12 flex items-center justify-center rounded-full mb-4 ${
@@ -217,21 +119,11 @@ const Features: React.FC = () => {
                 <p className={feature.priority ? 'text-white/90' : 'text-gray-600 dark:text-gray-300'}>
                   {feature.description}
                 </p>
-              </button>
+              </div>
             </div>
           ))}
         </div>
       </div>
-      
-      {selectedFeature && (
-        <FeatureModal
-          isOpen={true}
-          onClose={() => setSelectedFeature(null)}
-          title={selectedFeature.title}
-          description={selectedFeature.description}
-          details={selectedFeature.details}
-        />
-      )}
     </section>
   );
 };

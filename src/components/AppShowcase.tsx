@@ -41,18 +41,20 @@ const AppShowcase: React.FC = () => {
         </div>
         
         <div className="relative max-w-5xl mx-auto">
-          <div className="relative overflow-hidden rounded-2xl shadow-2xl mb-8 pb-[177.78%] bg-black">
-            <div className="absolute inset-0 flex transition-transform duration-500" style={{ transform: `translateX(-${activeSlide * 100}%)` }}>
+          <div className="relative overflow-hidden rounded-2xl shadow-2xl mb-8">
+            <div className="relative flex transition-transform duration-500" style={{ transform: `translateX(-${activeSlide * 100}%)` }}>
               {screenshots.map((screenshot, index) => (
-                <div key={index} className="min-w-full h-full relative">
-                  <img 
-                    src={screenshot.image} 
-                    alt={`Speed Clipper - ${screenshot.title}`} 
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-8">
-                    <h3 className="text-2xl md:text-3xl font-semibold mb-2">{screenshot.title}</h3>
-                    <p className="text-lg text-gray-200">{screenshot.description}</p>
+                <div key={index} className="min-w-full relative">
+                  <div className="relative">
+                    <img 
+                      src={screenshot.image} 
+                      alt={`Speed Clipper - ${screenshot.title}`} 
+                      className="w-full h-auto object-contain"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-8">
+                      <h3 className="text-2xl md:text-3xl font-semibold mb-2">{screenshot.title}</h3>
+                      <p className="text-lg text-gray-200">{screenshot.description}</p>
+                    </div>
                   </div>
                 </div>
               ))}
