@@ -87,7 +87,9 @@ const Download: React.FC = () => {
         contact: ""
       },
       theme: {
-        color: "#4f46e5"
+        color: "#1E1E1E",
+        backdrop_color: "#121212",
+        hide_topbar: true
       }
     };
     
