@@ -1,0 +1,25 @@
+Privacy Policy for Speed Clipper Website
+
+Effective Date: June 4, 2025
+
+At Speed Clipper, we value your privacy. This privacy policy outlines how we handle data when you visit our website (https://www.speedclipper.com).
+
+1. No Personal Data Collection
+We do not collect or store any personal information such as your name, email, location, or uploaded files when you visit our website.
+
+2. Analytics
+We use Vercel’s built-in analytics to monitor general website performance and traffic. These analytics do not personally identify individual users.
+
+3. External Links
+Our website may include links to third-party platforms, such as Discord. Clicking on these links will take you to external sites governed by their own privacy policies. We are not responsible for their content or data handling practices.
+
+4. Cookies
+We do not use cookies or trackers to collect personal data.
+
+5. Changes to This Policy
+We may update this privacy policy from time to time. Updates will be posted on this page.
+
+6. Contact
+If you have any questions or concerns about this policy, please reach out to us through our official Discord server.
+
+Thank you for trusting Speed Clipper.

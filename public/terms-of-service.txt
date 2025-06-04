@@ -1,0 +1,28 @@
+Terms of Service for Speed Clipper Website
+
+Effective Date: June 4, 2025
+
+Please read these Terms of Service carefully before using the Speed Clipper website (https://www.speedclipper.com). By accessing the site, you agree to the following:
+
+1. Use of the Website
+This website is provided for informational and support purposes related to the Speed Clipper Android application. You may use the site only in a lawful manner and in accordance with these terms.
+
+2. No Accounts or Purchases
+This website does not require user accounts. All license key purchases are handled externally through Discord links.
+
+3. Ownership and License
+All content on this site, including branding, descriptions, and graphics, is owned by Speed Clipper and may not be copied or redistributed without permission.
+
+4. Disclaimer
+The website is provided "as-is" without any warranties. We do not guarantee uninterrupted or error-free access.
+
+5. External Services
+We use Firebase Firestore in the mobile app to verify license keys. No personal data is stored during this process. Website analytics are handled by Vercel in an anonymous manner. External Discord links are provided for communication and purchases.
+
+6. Changes to These Terms
+We reserve the right to modify these terms at any time. Updates will be posted on this page.
+
+7. Contact
+For support or inquiries, visit our official Discord server.
+
+Thank you for using Speed Clipper.
