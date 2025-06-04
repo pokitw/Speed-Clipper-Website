@@ -38,17 +38,17 @@ const Hero: React.FC = () => {
           </div>
           <div className="w-full md:w-1/2 relative animate-fade-in animation-delay-300">
             <div className="relative z-10 rounded-xl overflow-hidden shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500">
-              <img 
-                src="https://images.pexels.com/photos/4144179/pexels-photo-4144179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                alt="Speed Clipper App Interface" 
-                className="w-full h-auto"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent">
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-white font-medium text-lg">Version 1.1 Now Available!</p>
-                </div>
-              </div>
-            </div>
+  <img 
+    src="/images/hero.jpg" 
+    alt="Speed Clipper App Interface" 
+    className="w-full h-auto"
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent">
+    <div className="absolute bottom-4 left-4 right-4">
+      <p className="text-white font-medium text-lg">Version 1.1 Now Available!</p>
+    </div>
+  </div>
+</div>
             <div className="absolute -bottom-4 -right-4 -z-10 w-full h-full bg-accent-500 rounded-xl transform rotate-3"></div>
           </div>
         </div>
