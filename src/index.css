@@ -9,41 +9,55 @@
   background-size: 20px 20px;
 }
 
-/* Custom animations */
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* Scroll animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.7s ease-out;
 }
 
-@keyframes slide-up {
-  from { 
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to { 
-    transform: translateY(0);
-    opacity: 1;
-  }
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@keyframes slide-down {
-  from { 
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to { 
-    transform: translateY(0);
-    opacity: 1;
-  }
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.7s ease-out;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.7s ease-out;
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Add padding for fixed header */
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 60px; /* Smaller padding for mobile */
+  }
 }
 
 body {
   font-family: 'Inter', sans-serif;
   @apply text-gray-800 antialiased;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 h1, h2, h3, h4, h5, h6 {

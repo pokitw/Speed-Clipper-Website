@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Smartphone, Video, Key, Zap } from 'lucide-react';
+import PurchaseStepsModal from './PurchaseStepsModal';
 
 const GetStarted: React.FC = () => {
+  const [showPurchaseSteps, setShowPurchaseSteps] = useState(false);
+
   return (
     <section id="get-started" className="py-20 bg-white dark:bg-dark-surface">
       <div className="container mx-auto px-4 md:px-6">
@@ -32,10 +35,17 @@ const GetStarted: React.FC = () => {
             </div>
             <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-dark-text">Get Your License</h3>
             <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-              <li>• Join our Discord server</li>
-              <li>• DM @wpokit to purchase</li>
+              <li>• Purchase directly on our website</li>
               <li>• One-time payment of $3.99</li>
-              <li>• Receive your permanent key</li>
+              <li>• Instant license key delivery</li>
+              <li>
+                <button 
+                  onClick={() => setShowPurchaseSteps(true)}
+                  className="text-primary-600 dark:text-dark-primary hover:underline"
+                >
+                  View purchase steps
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -88,6 +98,11 @@ const GetStarted: React.FC = () => {
           </ul>
         </div>
       </div>
+
+      <PurchaseStepsModal 
+        isOpen={showPurchaseSteps}
+        onClose={() => setShowPurchaseSteps(false)}
+      />
     </section>
   );
 }

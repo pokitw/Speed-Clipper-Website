@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, MessageSquare } from 'lucide-react';
 
 interface FAQItemProps {
   question: string;
@@ -71,7 +71,7 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-20 bg-gray-50 dark:bg-dark-bg">
+    <section id="faq" className="py-20 bg-gray-50 dark:bg-dark-bg reveal">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-dark-text mb-4">Frequently Asked Questions</h2>
@@ -100,7 +100,8 @@ const FAQ: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-primary-600 dark:bg-dark-primary text-white font-medium rounded-full hover:bg-primary-700 dark:hover:opacity-90 transition-colors"
           >
-            Contact Support
+            <MessageSquare size={20} className="mr-2" />
+            Join Our Discord Community
           </a>
         </div>
       </div>
