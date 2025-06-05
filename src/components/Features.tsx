@@ -31,7 +31,7 @@ const Features: React.FC = () => {
     {
       icon: <Edit3 size={24} />,
       title: "Editor Mode",
-      description: "Create clean 9:16 videos with a centered layout, bold text, and a white background. Perfect for Instagram. No editing skills needed. Customize text style, color, position, and more in seconds.",
+      description: "Create clean 9:16 videos with a centered layout and a customizable background. Perfect for Instagram. No editing skills needed. Customize text style, color, position, and more in seconds.",
       priority: true
     },
     {
