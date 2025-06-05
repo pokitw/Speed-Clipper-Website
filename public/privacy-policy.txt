@@ -1,25 +1,74 @@
-Privacy Policy for Speed Clipper Website
+Privacy Policy for Speed Clipper
 
-Effective Date: June 4, 2025
+Last Updated: June 5, 2025
 
-At Speed Clipper, we value your privacy. This privacy policy outlines how we handle data when you visit our website (https://www.speedclipper.com).
+1. Introduction
 
-1. No Personal Data Collection
-We do not collect or store any personal information such as your name, email, location, or uploaded files when you visit our website.
+Welcome to Speed Clipper. This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application and website.
 
-2. Analytics
-We use Vercel’s built-in analytics to monitor general website performance and traffic. These analytics do not personally identify individual users.
+2. Information We Collect
 
-3. External Links
-Our website may include links to third-party platforms, such as Discord. Clicking on these links will take you to external sites governed by their own privacy policies. We are not responsible for their content or data handling practices.
+2.1 Automatically Collected Information
+- Basic device information necessary for app functionality
+- App performance data
+- Usage analytics through standard platforms
 
-4. Cookies
-We do not use cookies or trackers to collect personal data.
+2.2 Payment Information
+- All payment processing is handled securely by Razorpay
+- We do not store any payment information
+- Only license key associations are maintained for app functionality
 
-5. Changes to This Policy
-We may update this privacy policy from time to time. Updates will be posted on this page.
+3. How We Use Information
 
-6. Contact
-If you have any questions or concerns about this policy, please reach out to us through our official Discord server.
+We use collected information to:
+- Process payments and deliver license keys
+- Improve app performance and features
+- Provide technical support
+- Maintain app security
 
-Thank you for trusting Speed Clipper.
+4. International Data Processing
+
+- Our services are available worldwide
+- Data is processed in accordance with international data protection standards
+- We use industry-standard security measures to protect your information
+
+5. Data Retention
+
+We retain information only as long as necessary to:
+- Provide our services
+- Maintain license key functionality
+- Comply with legal obligations
+- Improve our services
+
+6. Your Rights
+
+You have the right to:
+- Access your information
+- Request correction of any inaccurate information
+- Request deletion of your information
+- Object to processing of your information
+
+7. Children's Privacy
+
+- The app is not intended for users under 13 years of age
+- We do not knowingly collect information from children under 13
+- If you are under 13, please do not use the app or provide any information
+
+8. Security Measures
+
+We implement appropriate security measures to protect against:
+- Unauthorized access
+- Alteration
+- Disclosure
+- Destruction of your information
+
+9. Changes to Privacy Policy
+
+- We may update this policy periodically
+- Changes will be posted on our website
+- Continued use of our services constitutes acceptance of changes
+
+10. Contact Us
+
+For privacy-related inquiries:
+Email: brwlgmr@gmail.com

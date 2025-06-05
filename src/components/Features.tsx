@@ -31,7 +31,7 @@ const Features: React.FC = () => {
     {
       icon: <Edit3 size={24} />,
       title: "Editor Mode",
-      description: "Create polished 9:16 videos with centered content and customizable text overlay. Add stylish text with custom fonts, colors, and animations. Perfect for Instagram and TikTok content with background blur, gradient overlays, and advanced editing tools.",
+      description: "Create clean 9:16 videos with a centered layout, bold text, and a white background. Perfect for Instagram. No editing skills needed. Customize text style, color, position, and more in seconds.",
       priority: true
     },
     {

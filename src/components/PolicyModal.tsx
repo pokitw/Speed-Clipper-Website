@@ -26,25 +26,25 @@ const PolicyModal: React.FC<PolicyModalProps> = ({ isOpen, onClose, title, polic
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className={`max-w-2xl w-full rounded-2xl ${
+      <div className={`max-w-2xl w-full rounded-2xl max-h-[90vh] flex flex-col ${
         theme === 'dark' ? 'bg-dark-surface text-dark-text' : 'bg-white text-gray-900'
       }`}>
-        <div className="p-6">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="text-2xl font-semibold">{title}</h3>
-            <button 
-              onClick={onClose}
-              className={`p-2 rounded-full transition-colors ${
-                theme === 'dark' 
-                  ? 'hover:bg-dark-border text-dark-text' 
-                  : 'hover:bg-gray-100 text-gray-500'
-              }`}
-              aria-label="Close modal"
-            >
-              <X size={24} />
-            </button>
-          </div>
-          
+        <div className="p-6 border-b border-gray-200 dark:border-dark-border flex justify-between items-center">
+          <h3 className="text-2xl font-semibold">{title}</h3>
+          <button 
+            onClick={onClose}
+            className={`p-2 rounded-full transition-colors ${
+              theme === 'dark' 
+                ? 'hover:bg-dark-border text-dark-text' 
+                : 'hover:bg-gray-100 text-gray-500'
+            }`}
+            aria-label="Close modal"
+          >
+            <X size={24} />
+          </button>
+        </div>
+        
+        <div className="p-6 overflow-y-auto flex-1">
           <div className={`prose max-w-none ${
             theme === 'dark' ? 'prose-invert' : ''
           }`}>
@@ -54,6 +54,6 @@ const PolicyModal: React.FC<PolicyModalProps> = ({ isOpen, onClose, title, polic
       </div>
     </div>
   );
-};
+}
 
-export default PolicyModal;
+export default PolicyModal

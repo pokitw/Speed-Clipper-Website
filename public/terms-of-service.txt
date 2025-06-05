@@ -1,28 +1,100 @@
-Terms of Service for Speed Clipper Website
+Terms of Service for Speed Clipper
 
-Effective Date: June 4, 2025
+Last Updated: June 5, 2025
 
-Please read these Terms of Service carefully before using the Speed Clipper website (https://www.speedclipper.com). By accessing the site, you agree to the following:
+1. Acceptance of Terms
 
-1. Use of the Website
-This website is provided for informational and support purposes related to the Speed Clipper Android application. You may use the site only in a lawful manner and in accordance with these terms.
+By using Speed Clipper ("the App"), you agree to these Terms of Service ("Terms"). If you disagree with any part, do not use our services.
 
-2. No Accounts or Purchases
-This website does not require user accounts. All license key purchases are handled externally through Discord links.
+2. International Use
 
-3. Ownership and License
-All content on this site, including branding, descriptions, and graphics, is owned by Speed Clipper and may not be copied or redistributed without permission.
+2.1 Availability
+- The App is available worldwide
+- Users are responsible for compliance with local laws
+- Pricing is in Indian Rupees (₹)
 
-4. Disclaimer
-The website is provided "as-is" without any warranties. We do not guarantee uninterrupted or error-free access.
+2.2 Language
+- Primary language is English
+- Support provided in English
 
-5. External Services
-We use Firebase Firestore in the mobile app to verify license keys. No personal data is stored during this process. Website analytics are handled by Vercel in an anonymous manner. External Discord links are provided for communication and purchases.
+3. License Terms
 
-6. Changes to These Terms
-We reserve the right to modify these terms at any time. Updates will be posted on this page.
+3.1 Purchase and Activation
+- One-time purchase required
+- License keys are non-transferable
+- One license per device
+- No refunds after key activation
 
-7. Contact
-For support or inquiries, visit our official Discord server.
+3.2 Usage Rights
+- Personal and commercial use permitted
+- No redistribution or resale
+- No reverse engineering
+- No unauthorized modifications
 
-Thank you for using Speed Clipper.
+4. User Responsibilities
+
+You agree to:
+- Provide accurate payment information
+- Maintain license key security
+- Use the App legally and responsibly
+- Not use for illegal content creation
+
+5. Payment and Pricing
+
+5.1 Payment Processing
+- Payments handled by Razorpay
+- Secure payment processing
+- No stored payment information
+
+5.2 Pricing
+- One-time payment of ₹349
+- Price subject to change
+- No recurring charges
+
+6. Intellectual Property
+
+6.1 Ownership
+- App and content owned by Speed Clipper
+- Users retain rights to created content
+
+6.2 Restrictions
+- No unauthorized copying
+- No derivative works
+- No removal of copyright notices
+
+7. Disclaimers
+
+7.1 Warranty Disclaimer
+- App provided "as is"
+- No warranties or guarantees
+- Performance depends on device capabilities
+
+7.2 Availability
+- We strive for continuous availability
+- No guarantee of uninterrupted service
+- May be affected by technical issues
+
+8. Limitation of Liability
+
+- Not liable for indirect damages
+- Not liable for data loss
+- Maximum liability limited to purchase price
+
+9. Termination
+
+We may terminate service for:
+- Terms violation
+- Illegal activity
+- Fraudulent behavior
+- License key abuse
+
+10. Changes to Terms
+
+- Terms may be updated periodically
+- Changes effective upon posting
+- Continued use implies acceptance
+
+11. Contact
+
+For support or inquiries:
+Email: brwlgmr@gmail.com

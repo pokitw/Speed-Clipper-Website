@@ -4,11 +4,13 @@ import { collection, setDoc, doc, query, getDocs, where } from 'firebase/firesto
 import { db } from '../firebase';
 import PaymentSuccess from './PaymentSuccess';
 import DownloadModal from './DownloadModal';
+import TermsAcceptanceModal from './TermsAcceptanceModal';
 import toast from 'react-hot-toast';
 
 const Download: React.FC = () => {
   const [showPaymentSuccess, setShowPaymentSuccess] = useState(false);
   const [showDownloadModal, setShowDownloadModal] = useState(false);
+  const [showTermsModal, setShowTermsModal] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [accessKey, setAccessKey] = useState('');
@@ -46,10 +48,14 @@ const Download: React.FC = () => {
   };
 
   const handlePayment = () => {
+    setShowTermsModal(true);
+  };
+
+  const initiatePayment = () => {
     setIsAnimating(true);
     const options = {
       key: RAZORPAY_KEY,
-      amount: 34900, // ₹349 in paise
+      amount: 34900,
       currency: "INR",
       name: "Speed Clipper",
       description: "App License Purchase",
@@ -227,6 +233,12 @@ const Download: React.FC = () => {
         isOpen={showDownloadModal}
         onClose={() => setShowDownloadModal(false)}
         onPurchase={handlePayment}
+      />
+
+      <TermsAcceptanceModal
+        isOpen={showTermsModal}
+        onClose={() => setShowTermsModal(false)}
+        onAccept={initiatePayment}
       />
     </section>
   );
