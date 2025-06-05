@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MessageSquare } from 'lucide-react';
 import PolicyModal from './PolicyModal';
+import BuyMeCoffee from './BuyMeCoffee';
 
 const Footer: React.FC = () => {
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
@@ -82,9 +83,11 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        
-        <div className="border-t border-gray-800 dark:border-dark-border pt-8 text-center">
-          <p className="text-gray-500 dark:text-gray-400">
+
+        <div className="border-t border-gray-800 dark:border-dark-border pt-8">
+          <BuyMeCoffee className="mb-8" />
+          
+          <p className="text-center text-gray-500 dark:text-gray-400">
             &copy; {currentYear} Speed Clipper. All rights reserved.
           </p>
         </div>
