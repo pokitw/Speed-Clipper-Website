@@ -16,21 +16,23 @@ const Hero: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center md:space-x-8 lg:space-x-16">
           <div className="w-full md:w-1/2 mb-10 md:mb-0 animate-fade-in">
             <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-gray-900 dark:text-dark-text leading-tight">
-              Make Clipping <span className="text-primary-600 dark:text-dark-primary">Faster & Easier</span>
+              Make Video Editing <span className="text-primary-600 dark:text-dark-primary">Faster & Easier</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-              Speed Clipper helps you resize videos to 16:9, trim content, and enhance your videos with our powerful editor. Now with Material 3 UI and exciting new features!
+              Speed Clipper is the fastest Android video editor for content creators. Instantly resize to 16:9, trim content, and enhance your videos with our powerful Material 3 editor.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <button 
                 onClick={() => document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-8 py-3 bg-primary-600 dark:bg-dark-primary text-white font-medium rounded-full hover:bg-primary-700 dark:hover:opacity-90 transition-colors shadow-lg hover:shadow-xl text-lg"
+                aria-label="Download Speed Clipper"
               >
                 Download Now
               </button>
               <button 
                 onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-8 py-3 bg-white dark:bg-dark-surface text-primary-700 dark:text-dark-primary font-medium rounded-full border border-primary-200 dark:border-dark-border hover:bg-primary-50 dark:hover:bg-dark-border transition-colors shadow-md hover:shadow-lg text-lg"
+                aria-label="View Speed Clipper features"
               >
                 Explore Features
               </button>
@@ -56,7 +58,7 @@ const Hero: React.FC = () => {
           <button
             onClick={scrollToFeatures}
             className="inline-flex items-center justify-center p-3 bg-white dark:bg-dark-surface rounded-full shadow-md hover:shadow-lg transition-all animate-pulse-slow"
-            aria-label="Scroll to features"
+            aria-label="Scroll to features section"
           >
             <ChevronDown size={24} className="text-primary-600 dark:text-dark-primary" />
           </button>
