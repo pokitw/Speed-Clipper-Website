@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center md:space-x-8 lg:space-x-16">
           <div className="w-full md:w-1/2 mb-10 md:mb-0 animate-fade-in">
             <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-gray-900 dark:text-dark-text leading-tight">
-              Make Video Editing <span className="text-primary-600 dark:text-dark-primary">Faster & Easier</span>
+              Make Clipping <span className="text-primary-600 dark:text-dark-primary">Faster & Easier</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
               Speed Clipper is the fastest Android video editor for content creators. Instantly resize to 16:9, trim content, and enhance your videos with our powerful Material 3 editor.
