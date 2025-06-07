@@ -294,7 +294,7 @@ const Download: React.FC = () => {
             <div className="relative mx-auto max-w-xs">
               <div className="rounded-3xl overflow-hidden border-8 border-gray-900 shadow-2xl relative z-10 transform rotate-3 hover:rotate-0 transition-transform duration-500">
                 <img 
-                  src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                  src="/images/hero.jpg" 
                   alt="Speed Clipper on smartphone" 
                   className="w-full h-auto"
                 />
