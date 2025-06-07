@@ -24,7 +24,7 @@ const Download: React.FC = () => {
       version: "1.0",
       name: "Speed Clipper v1.0 (Initial Release)",
       description: "The original Speed Clipper with core video resizing functionality",
-      downloadPath: "/speedclipper-v1.0.apk",
+      downloadPath: "/speedclipper-v1.0.zip",
       releaseDate: "March 2024",
       features: [
         "Basic 16:9 video resizing",
@@ -127,7 +127,14 @@ const Download: React.FC = () => {
   const handleDownload = (version?: string, downloadPath?: string) => {
     const link = document.createElement('a');
     link.href = downloadPath || '/speedclipper.apk';
-    link.download = downloadPath ? `speedclipper-v${version}.apk` : 'speedclipper.apk';
+    
+    if (version) {
+      // For previous versions, use the appropriate file extension
+      const fileName = downloadPath?.includes('.zip') ? `speedclipper-v${version}.zip` : `speedclipper-v${version}.apk`;
+      link.download = fileName;
+    } else {
+      link.download = 'speedclipper.apk';
+    }
     
     if (version) {
       setDownloadingVersion(version);
