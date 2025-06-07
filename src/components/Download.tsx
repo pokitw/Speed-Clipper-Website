@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Key, Check, Download as DownloadIcon } from 'lucide-react';
+import { ArrowRight, Key, Check, Download as DownloadIcon, Clock, ChevronDown, ChevronUp } from 'lucide-react';
 import { collection, setDoc, doc, query, getDocs, where } from 'firebase/firestore';
 import { db } from '../firebase';
 import PaymentSuccess from './PaymentSuccess';
@@ -14,8 +14,25 @@ const Download: React.FC = () => {
   const [isDownloading, setIsDownloading] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [accessKey, setAccessKey] = useState('');
+  const [showPreviousReleases, setShowPreviousReleases] = useState(false);
+  const [downloadingVersion, setDownloadingVersion] = useState<string | null>(null);
 
   const RAZORPAY_KEY = "rzp_live_HVZy0IyBKNeSHe";
+
+  const previousReleases = [
+    {
+      version: "1.0",
+      name: "Speed Clipper v1.0 (Initial Release)",
+      description: "The original Speed Clipper with core video resizing functionality",
+      downloadPath: "/speedclipper-v1.0.apk",
+      releaseDate: "March 2024",
+      features: [
+        "Basic 16:9 video resizing",
+        "Simple UI design",
+        "Core video processing"
+      ]
+    }
+  ];
 
   const generateAccessKey = () => {
     const chars = '0123456789ABCDEF';
@@ -107,16 +124,26 @@ const Download: React.FC = () => {
     rzp.open();
   };
 
-  const handleDownload = () => {
+  const handleDownload = (version?: string, downloadPath?: string) => {
     const link = document.createElement('a');
-    link.href = '/speedclipper.apk';
-    link.download = 'speedclipper.apk';
-    setIsDownloading(true);
+    link.href = downloadPath || '/speedclipper.apk';
+    link.download = downloadPath ? `speedclipper-v${version}.apk` : 'speedclipper.apk';
+    
+    if (version) {
+      setDownloadingVersion(version);
+    } else {
+      setIsDownloading(true);
+    }
     
     setTimeout(() => {
       link.click();
-      setIsDownloading(false);
-      setShowDownloadModal(true);
+      if (version) {
+        setDownloadingVersion(null);
+        setShowDownloadModal(true);
+      } else {
+        setIsDownloading(false);
+        setShowDownloadModal(true);
+      }
     }, 2500);
   };
 
@@ -163,7 +190,7 @@ const Download: React.FC = () => {
                 <ArrowRight size={20} className="ml-2" />
               </button>
               <button 
-                onClick={handleDownload}
+                onClick={() => handleDownload()}
                 disabled={isDownloading}
                 className="inline-flex items-center justify-center px-8 py-3 bg-secondary-600 dark:bg-dark-secondary text-white font-medium rounded-full hover:bg-secondary-700 dark:hover:bg-dark-hover transition-all duration-300 shadow-lg hover:shadow-xl text-lg w-full transform hover:scale-105"
               >
@@ -175,11 +202,84 @@ const Download: React.FC = () => {
                 ) : (
                   <>
                     <DownloadIcon size={24} className="mr-2" />
-                    Download APK
+                    Download APK (v1.1)
                     <ArrowRight size={20} className="ml-2" />
                   </>
                 )}
               </button>
+            </div>
+
+            {/* Previous Releases Section */}
+            <div className="mt-8 border-t border-gray-200 dark:border-dark-border pt-8">
+              <button
+                onClick={() => setShowPreviousReleases(!showPreviousReleases)}
+                className="flex items-center justify-between w-full text-left mb-4 hover:text-primary-600 dark:hover:text-dark-primary transition-colors"
+              >
+                <div className="flex items-center">
+                  <Clock size={20} className="mr-2 text-gray-500 dark:text-gray-400" />
+                  <span className="text-lg font-semibold text-gray-800 dark:text-dark-text">
+                    Previous Releases
+                  </span>
+                </div>
+                {showPreviousReleases ? (
+                  <ChevronUp size={20} className="text-gray-500 dark:text-gray-400" />
+                ) : (
+                  <ChevronDown size={20} className="text-gray-500 dark:text-gray-400" />
+                )}
+              </button>
+
+              {showPreviousReleases && (
+                <div className="space-y-4 animate-slide-down">
+                  {previousReleases.map((release, index) => (
+                    <div
+                      key={index}
+                      className="bg-gray-50 dark:bg-dark-bg rounded-lg p-4 border border-gray-200 dark:border-dark-border"
+                    >
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+                        <div>
+                          <h4 className="text-lg font-semibold text-gray-900 dark:text-dark-text">
+                            {release.name}
+                          </h4>
+                          <p className="text-sm text-gray-500 dark:text-gray-400">
+                            Released: {release.releaseDate}
+                          </p>
+                        </div>
+                        <button
+                          onClick={() => handleDownload(release.version, release.downloadPath)}
+                          disabled={downloadingVersion === release.version}
+                          className="inline-flex items-center px-4 py-2 bg-gray-600 dark:bg-dark-border text-white font-medium rounded-full hover:bg-gray-700 dark:hover:bg-dark-hover transition-colors mt-2 sm:mt-0"
+                        >
+                          {downloadingVersion === release.version ? (
+                            <div className="flex items-center">
+                              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                              Downloading...
+                            </div>
+                          ) : (
+                            <>
+                              <DownloadIcon size={16} className="mr-2" />
+                              Download v{release.version}
+                            </>
+                          )}
+                        </button>
+                      </div>
+                      <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">
+                        {release.description}
+                      </p>
+                      <div className="space-y-1">
+                        <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Key Features:</p>
+                        <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                          {release.features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-start">
+                              <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-2 mt-2 flex-shrink-0"></span>
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
           
