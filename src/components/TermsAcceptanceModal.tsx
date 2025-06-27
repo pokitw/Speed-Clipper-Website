@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import PolicyModal from './PolicyModal';
+import InternationalUsersModal from './InternationalUsersModal';
 
 interface TermsAcceptanceModalProps {
   isOpen: boolean;
@@ -16,11 +17,22 @@ const TermsAcceptanceModal: React.FC<TermsAcceptanceModalProps> = ({ isOpen, onC
   const [acceptedAge, setAcceptedAge] = useState(false);
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
   const [showTerms, setShowTerms] = useState(false);
+  const [showInternationalModal, setShowInternationalModal] = useState(false);
 
   const handleAccept = () => {
     if (acceptedTerms && acceptedPrivacy && acceptedAge) {
-      onAccept();
+      setShowInternationalModal(true);
     }
+  };
+
+  const handleProceedWithPayment = () => {
+    setShowInternationalModal(false);
+    onAccept();
+  };
+
+  const handleCloseInternationalModal = () => {
+    setShowInternationalModal(false);
+    onClose();
   };
 
   if (!isOpen) return null;
@@ -111,11 +123,17 @@ const TermsAcceptanceModal: React.FC<TermsAcceptanceModalProps> = ({ isOpen, onC
                   : 'bg-gray-300 dark:bg-dark-border text-gray-500 dark:text-gray-400 cursor-not-allowed'
               }`}
             >
-              Continue to Payment
+              Continue
             </button>
           </div>
         </div>
       </div>
+
+      <InternationalUsersModal
+        isOpen={showInternationalModal}
+        onClose={handleCloseInternationalModal}
+        onProceedWithPayment={handleProceedWithPayment}
+      />
 
       <PolicyModal
         isOpen={showPrivacyPolicy}
