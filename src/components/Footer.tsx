@@ -90,6 +90,9 @@ const Footer: React.FC = () => {
           <p className="text-center text-gray-500 dark:text-gray-400">
             &copy; {currentYear} Speed Clipper. All rights reserved.
           </p>
+          <p className="text-center text-gray-500 dark:text-gray-400 text-sm mt-1">
+            App & website developed by Muhtad Shah
+          </p>
         </div>
       </div>
 
