@@ -66,6 +66,9 @@ const CreatorStory: React.FC = () => {
                 MOBILE CLIPPING HAS NEVER BEEN THIS FAST! What used to take 20+ seconds 
                 now happens instantly with Speed Clipper's overlay feature.
               </p>
+              <p className="text-xs text-primary-200/60 dark:text-gray-400/60 mt-4 text-right">
+                — Muhtad Shah
+              </p>
             </div>
           </div>
         </div>
